@@ -1,0 +1,233 @@
+{
+ "7PIU_P": {
+  "peptide": [
+   "ARG",
+   "CYS",
+   "DAL",
+   "HIS",
+   "DPN",
+   "ARG",
+   "TRP",
+   "CYS"
+  ],
+  "nc_positions": [
+   3,
+   5
+  ],
+  "receptor_residues": 116
+ },
+ "7XAU_F": {
+  "peptide": [
+   "DPN",
+   "CYS",
+   "PHE",
+   "DTR",
+   "LYS",
+   "THR",
+   "CYS"
+  ],
+  "nc_positions": [
+   1,
+   4
+  ],
+  "receptor_residues": 128
+ },
+ "8I95_D": {
+  "peptide": [
+   "SER",
+   "PHE",
+   "LYS",
+   "PRO",
+   "MET",
+   "PRO",
+   "LEU",
+   "DAL",
+   "ARG"
+  ],
+  "nc_positions": [
+   8
+  ],
+  "receptor_residues": 121
+ },
+ "8X8N_C": {
+  "peptide": [
+   "DPN",
+   "CYS",
+   "PHE",
+   "DTR",
+   "LYS",
+   "THR",
+   "CYS",
+   "THR"
+  ],
+  "nc_positions": [
+   1,
+   4
+  ],
+  "receptor_residues": 124
+ },
+ "9B4J_A": {
+  "peptide": [
+   "DTH",
+   "DLE",
+   "DLY",
+   "DIL",
+   "DVA",
+   "DTR",
+   "DSN"
+  ],
+  "nc_positions": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "receptor_residues": 0
+ },
+ "9B4K_A": {
+  "peptide": [
+   "DTH",
+   "DLE",
+   "DLY",
+   "DIL",
+   "DVA",
+   "DTR",
+   "DAR"
+  ],
+  "nc_positions": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "receptor_residues": 0
+ },
+ "9B4L_E": {
+  "peptide": [
+   "DTH",
+   "DLE",
+   "DLY",
+   "DIL",
+   "DVA",
+   "DTR",
+   "DIL"
+  ],
+  "nc_positions": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "receptor_residues": 21
+ },
+ "9KUG_D": {
+  "peptide": [
+   "TYR",
+   "SER",
+   "PHE",
+   "LYS",
+   "ASP",
+   "MET",
+   "PRO",
+   "MLE",
+   "DAL",
+   "ARG"
+  ],
+  "nc_positions": [
+   8,
+   9
+  ],
+  "receptor_residues": 126
+ },
+ "9KXS_D": {
+  "peptide": [
+   "SER",
+   "PHE",
+   "LYS",
+   "ASP",
+   "MET",
+   "PRO",
+   "MLE",
+   "DAL",
+   "ARG"
+  ],
+  "nc_positions": [
+   7,
+   8
+  ],
+  "receptor_residues": 115
+ },
+ "9Q0F_B": {
+  "peptide": [
+   "SAR",
+   "ARG",
+   "VAL",
+   "TYR",
+   "LYS",
+   "HIS",
+   "PRO",
+   "ALA"
+  ],
+  "nc_positions": [
+   1
+  ],
+  "receptor_residues": 139
+ },
+ "9UMJ_D": {
+  "peptide": [
+   "PHE",
+   "LYS",
+   "PRO",
+   "MET",
+   "PRO",
+   "LEU",
+   "DAL",
+   "ARG"
+  ],
+  "nc_positions": [
+   7
+  ],
+  "receptor_residues": 127
+ },
+ "9UMX_D": {
+  "peptide": [
+   "TYR",
+   "SER",
+   "PHE",
+   "LYS",
+   "PRO",
+   "MET",
+   "PRO",
+   "LEU",
+   "DAL",
+   "ARG"
+  ],
+  "nc_positions": [
+   9
+  ],
+  "receptor_residues": 123
+ },
+ "9V38_C": {
+  "peptide": [
+   "PRO",
+   "MET",
+   "PRO",
+   "LEU",
+   "DAL",
+   "ARG"
+  ],
+  "nc_positions": [
+   5
+  ],
+  "receptor_residues": 113
+ }
+}

@@ -1,0 +1,20 @@
+# What is unique about each model (denoiser = RFD4 flow model; updated 18 Nov 2026)
+
+All trained models are LoRA adapters on the same frozen RFD4 flow network (189-class bundle). Unless noted: LoRA rank 16 (alpha 32) on the attention layers `to_qkv` and `to_out_node` of the 14 transformer blocks, plus the full `ca_linear` and `local_latents_linear` output layers (1.08 million trainable numbers). The decoder and the residue-type readout are never changed by these runs. Results = Results.MD sections 38 to 53.
+
+| Model | What is unique (the one thing that differs) | Data | Training setup | Where it ends up |
+|---|---|---|---|---|
+| **Untuned control** | The original RFD4 flow network with the 189-class bundle (new D-form rows copied from the L-forms plus 1% noise). No training. The reference every score is measured against. | none | none | baseline |
+| **A** | First full run: attention-only LoRA on everything we had at that time. | 1,266 training complexes (all first-round synthetic complexes) | batch 1, lr 1e-4, 12-complex held-out check, best at step 500 of 900 | held-out -0.41; real D-forms -6% latent loss |
+| **B** | Same as A but on the first batch only, to test how little data is enough. | 228 complexes (first batch) | batch 1, best at step 800 of 1,000 | held-out -0.35; best real D-form score of the early trials (-13% on 987 complexes) |
+| **C** | Same as A, longer and with a steadier check (30 held-out complexes). | 1,266 complexes | best at step 600 of 1,143 | held-out -0.47; real general codes -6.7%; the baseline recipe for G |
+| **D** | Bigger adapter: rank 64 (alpha 128) instead of 16. | same as C | best at step 1,050 (early stop 2,250) | worse on real complexes (+0.47) |
+| **E** | Rank 64 on attention AND the feed-forward layers and gate (70 adapted layers). | same as C | rank 64, all layer types | worst on real complexes (+0.68) |
+| **F (box)** | Much more data: the large pool, small batch. | 6,457 complexes, held-out 723 | batch 1, lr 1e-4, best step 750 (stopped 981) | better on synthetic held-out, not on real |
+| **F (H200)** | Same pool on the big GPU: larger batch. | 6,457 complexes | batch 4, lr 2e-4, best step 800 (early stop 1,600) | no better than F box |
+| **F2** | F (H200) best weights continued with a smaller learning rate. | 6,457 complexes | lr 5e-5, best step 300 (stop 800) | held-out -0.54; still no real-structure gain |
+| **G** | A new loss recipe on C's data: non-canonical positions weigh 10x, the noise-level weight is capped at 100, the learning rate is halved when the held-out check stalls (twice). | 1,266 complexes | batch 1, lr 1e-4, best step 2,700 (stopped by the 3 h time cap, still improving) | best synthetic held-out (-0.68); best D-form scores on real complexes (-11.4% on 987) |
+| **G2** | G's best weights continued on the large, diverse pool with the same recipe. | 8,947 complexes (7,938 train) | batch 4, lr 5e-5, best step 1,200 (early stop 2,000) | best real general codes (-8.8% on 987) and best overall non-canonical (-4.1%), no canonical loss; held-out equals G; D-forms a bit below G |
+| **G3** | G2's setup on the class-balanced subset of the pool: every one of the 25 swapped residue types has 273 to 280 positions (cap 280). The only difference from G2 is the data (about 3.6 times fewer complexes, evenly spread over the residue types). | 2,232 train complexes + the same held-out | batch 4, lr 5e-5, from G's best weights, best step 1,100 (early stop 1,900) | best overall non-canonical (-5.1% on 987 real) and best D-forms (-13.3%) with a quarter of G2's data; general codes -7.8% (G2 -8.8%); slightly worse than G2 at canonical positions (+0.1%) and on real complexes without a D-form |
+
+How to read the comparison: A to C show that a small D-form-heavy set transfers best; D and E show that bigger adapters do worse on real complexes; F and F2 show that more synthetic data alone improves only the synthetic score; G shows that the loss recipe matters; G2 shows that data diversity plus the G recipe finally helps the real general codes; G3 tests whether equal residue counts help the D-forms and the rare codes.

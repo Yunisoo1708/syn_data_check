@@ -1,0 +1,349 @@
+name, memory.total [MiB]
+NVIDIA H200, 143771 MiB
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+cuEquivariance is unavailable; using torch. Reason: cuequivariance-ops-torch>=0.13 is required (No module named 'cuequivariance_ops_torch')
+resumed from /gpfs/projects/stf/legia8/RFD4_fine_tune/best_decoder_run1.pt
+trainable tensors: 2, trainable numbers: 321792
+files: train 34773, val 4346, test 4346
+/gpfs/home/legia8/condaroot/envs/rfd3_env/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3953245) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+val loss of resumed model: 0.3942
+batch 1: loss 0.3756, peak GPU memory 41.0 GiB (batch size 1024)
+batch 2: loss 0.3713, peak GPU memory 46.3 GiB (batch size 1024)
+batch 3: loss 0.3761, peak GPU memory 46.3 GiB (batch size 1024)
+epoch 0: train loss 0.2971, val loss 0.2229, elapsed 257s
+saved best model (val loss 0.2229)
+batch 1: loss 0.2315, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.2418, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.2198, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 1: train loss 0.1899, val loss 0.1610, elapsed 504s
+saved best model (val loss 0.1610)
+batch 1: loss 0.1677, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.1717, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.1551, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 2: train loss 0.1432, val loss 0.1307, elapsed 753s
+saved best model (val loss 0.1307)
+batch 1: loss 0.1233, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.1213, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.1295, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 3: train loss 0.1175, val loss 0.1079, elapsed 1000s
+saved best model (val loss 0.1079)
+batch 1: loss 0.1118, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.1123, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.1164, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 4: train loss 0.1020, val loss 0.0959, elapsed 1245s
+saved best model (val loss 0.0959)
+batch 1: loss 0.0966, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0961, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0986, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 5: train loss 0.0908, val loss 0.0898, elapsed 1489s
+saved best model (val loss 0.0898)
+batch 1: loss 0.0842, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0804, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0807, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 6: train loss 0.0815, val loss 0.0800, elapsed 1733s
+saved best model (val loss 0.0800)
+batch 1: loss 0.0866, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0681, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0777, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 7: train loss 0.0768, val loss 0.0734, elapsed 1983s
+saved best model (val loss 0.0734)
+batch 1: loss 0.0814, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0677, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0792, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 8: train loss 0.0713, val loss 0.0695, elapsed 2231s
+saved best model (val loss 0.0695)
+batch 1: loss 0.0646, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0668, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0744, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 9: train loss 0.0675, val loss 0.0691, elapsed 2468s
+saved best model (val loss 0.0691)
+batch 1: loss 0.0685, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0632, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0719, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 10: train loss 0.0646, val loss 0.0646, elapsed 2705s
+saved best model (val loss 0.0646)
+batch 1: loss 0.0664, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0617, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0631, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 11: train loss 0.0605, val loss 0.0577, elapsed 2941s
+saved best model (val loss 0.0577)
+batch 1: loss 0.0568, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0584, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0621, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 12: train loss 0.0580, val loss 0.0545, elapsed 3198s
+saved best model (val loss 0.0545)
+batch 1: loss 0.0546, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0560, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0605, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 13: train loss 0.0559, val loss 0.0534, elapsed 3456s
+saved best model (val loss 0.0534)
+batch 1: loss 0.0548, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0539, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0470, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 14: train loss 0.0555, val loss 0.0510, elapsed 3711s
+saved best model (val loss 0.0510)
+batch 1: loss 0.0576, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0431, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0429, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 15: train loss 0.0523, val loss 0.0519, elapsed 3968s
+batch 1: loss 0.0475, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0523, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0494, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 16: train loss 0.0503, val loss 0.0501, elapsed 4229s
+saved best model (val loss 0.0501)
+batch 1: loss 0.0581, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0518, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0478, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 17: train loss 0.0478, val loss 0.0486, elapsed 4492s
+saved best model (val loss 0.0486)
+batch 1: loss 0.0484, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0499, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0517, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 18: train loss 0.0473, val loss 0.0434, elapsed 4756s
+saved best model (val loss 0.0434)
+batch 1: loss 0.0509, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0440, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0418, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 19: train loss 0.0455, val loss 0.0463, elapsed 5031s
+batch 1: loss 0.0448, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0424, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0484, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 20: train loss 0.0438, val loss 0.0432, elapsed 5288s
+saved best model (val loss 0.0432)
+batch 1: loss 0.0384, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0445, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0437, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 21: train loss 0.0433, val loss 0.0423, elapsed 5544s
+saved best model (val loss 0.0423)
+batch 1: loss 0.0483, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0441, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0339, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 22: train loss 0.0417, val loss 0.0452, elapsed 5799s
+batch 1: loss 0.0369, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0412, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0482, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 23: train loss 0.0406, val loss 0.0402, elapsed 6058s
+saved best model (val loss 0.0402)
+batch 1: loss 0.0403, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0344, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0375, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 24: train loss 0.0395, val loss 0.0382, elapsed 6316s
+saved best model (val loss 0.0382)
+batch 1: loss 0.0422, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0434, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0390, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 25: train loss 0.0389, val loss 0.0376, elapsed 6578s
+saved best model (val loss 0.0376)
+batch 1: loss 0.0362, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0401, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0375, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 26: train loss 0.0367, val loss 0.0367, elapsed 6840s
+saved best model (val loss 0.0367)
+batch 1: loss 0.0357, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0321, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0338, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 27: train loss 0.0357, val loss 0.0348, elapsed 7100s
+saved best model (val loss 0.0348)
+batch 1: loss 0.0348, peak GPU memory 57.6 GiB (batch size 1024)
+batch 2: loss 0.0309, peak GPU memory 57.6 GiB (batch size 1024)
+batch 3: loss 0.0365, peak GPU memory 57.6 GiB (batch size 1024)
+epoch 28: train loss 0.0348, val loss 0.0339, elapsed 7359s
+saved best model (val loss 0.0339)
+batch 1: loss 0.0380, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0302, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0375, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 29: train loss 0.0341, val loss 0.0337, elapsed 7615s
+saved best model (val loss 0.0337)
+batch 1: loss 0.0321, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0332, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0318, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 30: train loss 0.0325, val loss 0.0329, elapsed 7864s
+saved best model (val loss 0.0329)
+batch 1: loss 0.0350, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0338, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0322, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 31: train loss 0.0330, val loss 0.0317, elapsed 8111s
+saved best model (val loss 0.0317)
+batch 1: loss 0.0349, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0294, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0335, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 32: train loss 0.0318, val loss 0.0297, elapsed 8366s
+saved best model (val loss 0.0297)
+batch 1: loss 0.0341, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0333, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0261, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 33: train loss 0.0302, val loss 0.0283, elapsed 8621s
+saved best model (val loss 0.0283)
+batch 1: loss 0.0280, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0276, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0288, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 34: train loss 0.0290, val loss 0.0258, elapsed 8879s
+saved best model (val loss 0.0258)
+batch 1: loss 0.0244, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0301, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0321, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 35: train loss 0.0284, val loss 0.0292, elapsed 9135s
+batch 1: loss 0.0257, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0266, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0242, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 36: train loss 0.0275, val loss 0.0294, elapsed 9396s
+batch 1: loss 0.0251, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0227, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0264, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 37: train loss 0.0274, val loss 0.0263, elapsed 9654s
+batch 1: loss 0.0294, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0244, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0298, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 38: train loss 0.0268, val loss 0.0256, elapsed 9917s
+saved best model (val loss 0.0256)
+batch 1: loss 0.0232, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0264, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0258, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 39: train loss 0.0255, val loss 0.0263, elapsed 10177s
+batch 1: loss 0.0242, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0232, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0232, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 40: train loss 0.0252, val loss 0.0260, elapsed 10440s
+batch 1: loss 0.0248, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0282, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0234, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 41: train loss 0.0247, val loss 0.0233, elapsed 10708s
+saved best model (val loss 0.0233)
+batch 1: loss 0.0302, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0244, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0236, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 42: train loss 0.0244, val loss 0.0238, elapsed 10976s
+batch 1: loss 0.0220, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0256, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0216, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 43: train loss 0.0236, val loss 0.0231, elapsed 11243s
+saved best model (val loss 0.0231)
+batch 1: loss 0.0244, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0249, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0208, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 44: train loss 0.0227, val loss 0.0227, elapsed 11504s
+saved best model (val loss 0.0227)
+batch 1: loss 0.0229, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0197, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0217, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 45: train loss 0.0223, val loss 0.0223, elapsed 11763s
+saved best model (val loss 0.0223)
+batch 1: loss 0.0181, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0193, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0267, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 46: train loss 0.0217, val loss 0.0213, elapsed 12021s
+saved best model (val loss 0.0213)
+batch 1: loss 0.0207, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0211, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0208, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 47: train loss 0.0212, val loss 0.0209, elapsed 12283s
+saved best model (val loss 0.0209)
+batch 1: loss 0.0239, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0227, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0203, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 48: train loss 0.0210, val loss 0.0206, elapsed 12545s
+saved best model (val loss 0.0206)
+batch 1: loss 0.0207, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0219, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0202, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 49: train loss 0.0209, val loss 0.0198, elapsed 12809s
+saved best model (val loss 0.0198)
+batch 1: loss 0.0234, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0227, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0192, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 50: train loss 0.0195, val loss 0.0191, elapsed 13077s
+saved best model (val loss 0.0191)
+batch 1: loss 0.0192, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0199, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0194, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 51: train loss 0.0193, val loss 0.0185, elapsed 13344s
+saved best model (val loss 0.0185)
+batch 1: loss 0.0206, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0223, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0206, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 52: train loss 0.0184, val loss 0.0188, elapsed 13612s
+batch 1: loss 0.0159, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0193, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0217, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 53: train loss 0.0179, val loss 0.0182, elapsed 13870s
+saved best model (val loss 0.0182)
+batch 1: loss 0.0182, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0186, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0190, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 54: train loss 0.0176, val loss 0.0178, elapsed 14140s
+saved best model (val loss 0.0178)
+batch 1: loss 0.0190, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0176, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0173, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 55: train loss 0.0176, val loss 0.0168, elapsed 14429s
+saved best model (val loss 0.0168)
+batch 1: loss 0.0186, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0186, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0170, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 56: train loss 0.0174, val loss 0.0170, elapsed 14713s
+batch 1: loss 0.0178, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0188, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0182, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 57: train loss 0.0164, val loss 0.0162, elapsed 15003s
+saved best model (val loss 0.0162)
+batch 1: loss 0.0159, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0170, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0162, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 58: train loss 0.0168, val loss 0.0163, elapsed 15293s
+batch 1: loss 0.0139, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0162, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0141, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 59: train loss 0.0160, val loss 0.0149, elapsed 15577s
+saved best model (val loss 0.0149)
+batch 1: loss 0.0190, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0173, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0143, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 60: train loss 0.0152, val loss 0.0152, elapsed 15864s
+batch 1: loss 0.0158, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0158, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0171, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 61: train loss 0.0151, val loss 0.0132, elapsed 16148s
+saved best model (val loss 0.0132)
+batch 1: loss 0.0161, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0156, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0140, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 62: train loss 0.0148, val loss 0.0146, elapsed 16433s
+batch 1: loss 0.0156, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0163, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0143, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 63: train loss 0.0146, val loss 0.0146, elapsed 16724s
+batch 1: loss 0.0125, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0166, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0156, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 64: train loss 0.0138, val loss 0.0135, elapsed 17010s
+batch 1: loss 0.0121, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0118, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0136, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 65: train loss 0.0134, val loss 0.0139, elapsed 17279s
+batch 1: loss 0.0114, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0131, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0127, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 66: train loss 0.0144, val loss 0.0392, elapsed 17534s
+batch 1: loss 0.0471, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0161, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0231, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 67: train loss 0.0164, val loss 0.0128, elapsed 17790s
+saved best model (val loss 0.0128)
+batch 1: loss 0.0145, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0120, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0140, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 68: train loss 0.0132, val loss 0.0130, elapsed 18047s
+batch 1: loss 0.0141, peak GPU memory 59.9 GiB (batch size 1024)
+batch 2: loss 0.0125, peak GPU memory 59.9 GiB (batch size 1024)
+batch 3: loss 0.0128, peak GPU memory 59.9 GiB (batch size 1024)
+epoch 69: train loss 0.0123, val loss 0.0131, elapsed 18307s
+test loss (best model): 0.0123
+EXIT 0

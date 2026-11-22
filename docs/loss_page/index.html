@@ -1,0 +1,132 @@
+<meta name="dash-one-writer">
+<style>
+.lp{display:flex;flex-direction:column;gap:var(--cds-gap-lg);max-width:920px}
+.lp h1{font-family:var(--font-anthropic-serif);font-weight:400;font-size:var(--cds-font-size-title);margin:0 0 var(--cds-gap-xs) 0}
+.lp .lead{margin:0;color:var(--color-fg-muted);font-size:var(--cds-font-size-body);line-height:1.5}
+.lp .lead b{color:var(--color-fg);font-weight:var(--cds-font-weight-medium);font-variant-numeric:tabular-nums}
+.lp .card{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-lg);display:flex;flex-direction:column;gap:var(--cds-gap-sm);min-width:0}
+.lp h2{margin:0;font-size:var(--cds-font-size-heading);font-weight:var(--cds-font-weight-medium)}
+.lp .note{margin:0;color:var(--color-fg-muted);font-size:var(--cds-font-size-caption);line-height:1.45}
+.lp .chart{position:relative;min-height:270px}
+.lp .chart svg{display:block;width:100%;height:auto}
+.lp .chart svg text{fill:var(--cds-text-secondary);font-size:11px;font-family:var(--font-anthropic-sans)}
+.lp .tip{position:absolute;pointer-events:none;background:var(--cds-surface-popover);border:1px solid var(--cds-border);box-shadow:var(--cds-shadow-popover);color:var(--cds-text-secondary);font-size:12px;padding:6px 8px;border-radius:6px;white-space:nowrap;z-index:2}
+.lp .legend{display:flex;gap:var(--cds-gap-md);flex-wrap:wrap;font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);margin-top:var(--cds-gap-xs)}
+.lp .legend i{display:inline-block;width:18px;height:0;border-top:2px solid;vertical-align:middle;margin-right:6px}
+.lp table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:var(--cds-font-size-caption)}
+.lp th,.lp td{text-align:right;padding:4px 8px;border-bottom:1px solid var(--color-border-line);white-space:nowrap}
+.lp th{font-weight:var(--cds-font-weight-medium);color:var(--color-fg-muted)}
+.lp th:first-child,.lp td:first-child{text-align:left}
+.lp .scroll{overflow-x:auto}
+</style>
+<div class="lp">
+  <div>
+    <h1>Decoder training loss</h1>
+    <p class="lead" id="lead" data-draw="lead" data-source="summary"></p>
+  </div>
+  <section class="card" id="complex-loss">
+    <h2>Complex loss: training vs held-out families</h2>
+    <p class="note">Lower is better. Held-out complexes come from protein families the model never trains on. If the held-out line rises while the training line keeps falling, the model is memorising the training complexes.</p>
+    <div class="chart" data-draw="chartComplex" data-source="loss"></div>
+  </section>
+  <section class="card" id="pool-loss">
+    <h2>Pool loss: training vs held-out peptides</h2>
+    <p class="note">The large peptide pool (46,379 files). This one should stay low for the whole run.</p>
+    <div class="chart" data-draw="chartPool" data-source="loss"></div>
+  </section>
+  <section class="card" id="epoch-table">
+    <h2>Every epoch</h2>
+    <p class="note">Newest first. The row marked saved is the epoch whose weights are kept.</p>
+    <div class="scroll">
+      <table data-source="loss" data-row-key="run,epoch">
+        <thead><tr><th data-field="run">Run</th><th data-field="epoch">Epoch</th><th data-field="train_complex">Train complex</th><th data-field="val_complex">Held-out complex</th><th data-field="train_pool">Train pool</th><th data-field="val_pool">Held-out pool</th><th>Weights</th></tr></thead>
+        <tbody data-draw="rows"></tbody>
+      </table>
+    </div>
+  </section>
+</div>
+<script>
+dash.calc('summary', {
+  title: 'Latest epoch and best held-out epoch',
+  description: 'The newest run in the file, its last epoch, the gap between held-out and training complex loss, and the epoch with the lowest held-out total loss.',
+  inputs: ['loss'],
+  fn: (loss) => {
+    if (!loss.length) return [];
+    const runs = [...new Set(loss.map((r) => r.run))];
+    const run = runs[runs.length - 1];
+    const rs = loss.filter((r) => r.run === run).sort((a, b) => a.epoch - b.epoch);
+    const last = rs[rs.length - 1];
+    let best = rs[0];
+    for (const r of rs) if (r.val_pool + r.val_complex < best.val_pool + best.val_complex) best = r;
+    return [{ run: run, epoch: last.epoch, val_complex: last.val_complex, train_complex: last.train_complex, gap: Math.round((last.val_complex - last.train_complex) * 1e5) / 1e5, best_epoch: best.epoch }];
+  }
+});
+dash.draw('lead', (el) => {
+  const s = dash.data('summary');
+  if (s.status !== 'ok' || !s.data.length) { el.textContent = '—'; return; }
+  const r = s.data[0];
+  const p = d3.select(el); p.text('');
+  const add = (t) => p.append('span').text(t);
+  const num = (f, v) => p.append('b').attr('data-source', 'summary').attr('data-field', f).attr('data-row', '0').text(v);
+  add(r.run + ' is at epoch '); num('epoch', r.epoch);
+  add('. Held-out complex loss '); num('val_complex', r.val_complex);
+  add(' against '); num('train_complex', r.train_complex);
+  add(' on training complexes (gap '); num('gap', r.gap);
+  add('). Lowest held-out total at epoch '); num('best_epoch', r.best_epoch); add('.');
+});
+function lineChart(el, trainKey, valKey, label) {
+  const g = dash.data('loss');
+  const root = d3.select(el);
+  if (g.status !== 'ok' || !g.data.length) { root.selectAll('*').remove(); el.textContent = g.status === 'error' ? 'Failed to load' : '—'; return; }
+  root.text('');
+  const rows = g.data, runs = [...new Set(rows.map((r) => r.run))];
+  const W = Math.max(300, el.clientWidth || 600), H = 270, m = { t: 12, r: 14, b: 34, l: 52 };
+  const maxE = d3.max(rows, (r) => r.epoch) || 1;
+  const x = d3.scaleLinear().domain([0, maxE]).range([m.l, W - m.r]);
+  const vals = rows.flatMap((r) => [r[trainKey], r[valKey]]).filter((v) => v != null);
+  const y = d3.scaleLinear().domain([0, (d3.max(vals) || 1) * 1.08]).nice().range([H - m.b, m.t]);
+  const svg = root.append('svg').attr('viewBox', '0 0 ' + W + ' ' + H).attr('role', 'img')
+    .attr('aria-label', label + ': training and held-out loss by epoch for ' + runs.join(', '));
+  svg.append('g').selectAll('line').data(y.ticks(5)).join('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', (d) => y(d)).attr('y2', (d) => y(d)).style('stroke', 'var(--cds-chart-grid)');
+  const ax = svg.append('g').attr('transform', 'translate(0,' + (H - m.b) + ')').call(d3.axisBottom(x).ticks(Math.min(10, maxE)).tickFormat(d3.format('d')));
+  const ay = svg.append('g').attr('transform', 'translate(' + m.l + ',0)').call(d3.axisLeft(y).ticks(5).tickFormat(d3.format('.3~f')));
+  [ax, ay].forEach((a) => { a.selectAll('path,line').style('stroke', 'var(--cds-chart-axis)'); a.selectAll('text').style('fill', 'var(--cds-text-secondary)'); });
+  svg.append('text').attr('x', (m.l + W - m.r) / 2).attr('y', H - 4).attr('text-anchor', 'middle').text('Epoch');
+  const series = [[trainKey, 0, 'Training'], [valKey, 1, 'Held-out']];
+  runs.forEach((run, ri) => {
+    const rs = rows.filter((r) => r.run === run).sort((a, b) => a.epoch - b.epoch);
+    const latest = ri === runs.length - 1;
+    series.forEach(([key, ci]) => {
+      const pts = rs.filter((r) => r[key] != null);
+      svg.append('path').datum(pts).attr('fill', 'none').style('stroke', dash.colors[ci]).attr('stroke-width', latest ? 2.2 : 1.5).attr('stroke-dasharray', latest ? null : '4 3').attr('opacity', latest ? 1 : 0.7)
+        .attr('d', d3.line().x((r) => x(r.epoch)).y((r) => y(r[key]))(pts));
+      if (latest) svg.append('g').selectAll('circle').data(pts).join('circle').attr('cx', (r) => x(r.epoch)).attr('cy', (r) => y(r[key])).attr('r', 2.6).style('fill', dash.colors[ci]);
+    });
+  });
+  const lg = root.append('div').attr('class', 'legend');
+  series.forEach(([k, ci, name]) => { const s = lg.append('span'); s.append('i').style('border-top-color', dash.colors[ci]); s.append('span').text(name); });
+  if (runs.length > 1) lg.append('span').text('Dashed = earlier run');
+  const tip = root.append('div').attr('class', 'tip').style('display', 'none');
+  svg.append('rect').attr('x', m.l).attr('y', m.t).attr('width', W - m.l - m.r).attr('height', H - m.t - m.b).attr('fill', 'transparent')
+    .on('mousemove', (ev) => {
+      const e = Math.max(0, Math.min(maxE, Math.round(x.invert(d3.pointer(ev, svg.node())[0]))));
+      const lines = [];
+      runs.forEach((run) => { const r = rows.find((q) => q.run === run && q.epoch === e); if (r) lines.push(run + ', epoch ' + e + ': training ' + (r[trainKey] == null ? '—' : r[trainKey]) + ', held-out ' + r[valKey]); });
+      if (!lines.length) { tip.style('display', 'none'); return; }
+      const box = el.getBoundingClientRect();
+      tip.style('display', 'block').text('').selectAll('div').data(lines).join('div').text((d) => d);
+      tip.style('left', Math.min(ev.clientX - box.left + 12, Math.max(0, box.width - 260)) + 'px').style('top', Math.max(0, ev.clientY - box.top - 40) + 'px');
+    })
+    .on('mouseleave', () => tip.style('display', 'none'));
+}
+dash.draw('chartComplex', (el) => lineChart(el, 'train_complex', 'val_complex', 'Complex loss'));
+dash.draw('chartPool', (el) => lineChart(el, 'train_pool', 'val_pool', 'Pool loss'));
+dash.draw('rows', (tb) => {
+  const g = dash.data('loss');
+  if (g.status !== 'ok') { tb.replaceChildren(); return; }
+  const runs = [...new Set(g.data.map((r) => r.run))];
+  const sorted = [...g.data].sort((a, b) => runs.indexOf(b.run) - runs.indexOf(a.run) || b.epoch - a.epoch);
+  const tr = d3.select(tb).selectAll('tr').data(sorted).join('tr');
+  tr.selectAll('td').data((r) => [r.run, r.epoch, r.train_complex, r.val_complex, r.train_pool, r.val_pool, r.best ? 'saved' : '']).join('td').text((d) => (d == null ? '—' : d));
+});
+</script>

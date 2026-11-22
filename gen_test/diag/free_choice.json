@@ -1,0 +1,227 @@
+{
+ "control_choice_run8": {
+  "n_nc_slots": 176,
+  "n_can_slots": 544,
+  "any_nc": 1.0,
+  "exact": 0.03977272727272727,
+  "native_D_slots": 152,
+  "D_designed_at_D_slot": 0.19736842105263158,
+  "parent_match": 0.0,
+  "distinct_codes": 17,
+  "top_code": "SAR",
+  "top_code_share": 0.36363636363636365,
+  "majority_baseline": 0.3181818181818182,
+  "majority_code": "DAL",
+  "canonical_slot_exact": 0.08639705882352941,
+  "canonical_slot_any_nc": 0.0,
+  "canonical_top": [
+   [
+    "PHE",
+    101
+   ],
+   [
+    "SER",
+    58
+   ],
+   [
+    "ARG",
+    49
+   ],
+   [
+    "LEU",
+    48
+   ],
+   [
+    "TYR",
+    40
+   ]
+  ],
+  "designed_nc_codes": [
+   [
+    "SAR",
+    64
+   ],
+   [
+    "MAA",
+    44
+   ],
+   [
+    "DIL",
+    15
+   ],
+   [
+    "SEP",
+    15
+   ],
+   [
+    "DAL",
+    11
+   ],
+   [
+    "4FB",
+    6
+   ],
+   [
+    "TPO",
+    6
+   ],
+   [
+    "1AC",
+    3
+   ]
+  ],
+  "bond_ok": 0.8660128066378067,
+  "clash": 0.17045454545454544,
+  "chir_D": 0.7166666666666667
+ },
+ "G3_choice_run8": {
+  "n_nc_slots": 176,
+  "n_can_slots": 544,
+  "any_nc": 1.0,
+  "exact": 0.005681818181818182,
+  "native_D_slots": 152,
+  "D_designed_at_D_slot": 0.20394736842105263,
+  "parent_match": 0.0,
+  "distinct_codes": 14,
+  "top_code": "MAA",
+  "top_code_share": 0.2215909090909091,
+  "majority_baseline": 0.3181818181818182,
+  "majority_code": "DAL",
+  "canonical_slot_exact": 0.10845588235294118,
+  "canonical_slot_any_nc": 0.0,
+  "canonical_top": [
+   [
+    "PHE",
+    129
+   ],
+   [
+    "ARG",
+    68
+   ],
+   [
+    "LEU",
+    58
+   ],
+   [
+    "SER",
+    48
+   ],
+   [
+    "PRO",
+    42
+   ]
+  ],
+  "designed_nc_codes": [
+   [
+    "MAA",
+    39
+   ],
+   [
+    "4FB",
+    38
+   ],
+   [
+    "SAR",
+    21
+   ],
+   [
+    "DIL",
+    21
+   ],
+   [
+    "04Q",
+    19
+   ],
+   [
+    "23F",
+    16
+   ],
+   [
+    "DHI",
+    5
+   ],
+   [
+    "DPR",
+    5
+   ]
+  ],
+  "bond_ok": 0.8749909812409814,
+  "clash": 0.19318181818181818,
+  "chir_D": 0.8232323232323232
+ },
+ "S1_choice_run8": {
+  "n_nc_slots": 176,
+  "n_can_slots": 544,
+  "any_nc": 1.0,
+  "exact": 0.022727272727272728,
+  "native_D_slots": 152,
+  "D_designed_at_D_slot": 0.4144736842105263,
+  "parent_match": 0.0,
+  "distinct_codes": 14,
+  "top_code": "DIL",
+  "top_code_share": 0.24431818181818182,
+  "majority_baseline": 0.3181818181818182,
+  "majority_code": "DAL",
+  "canonical_slot_exact": 0.10294117647058823,
+  "canonical_slot_any_nc": 0.0,
+  "canonical_top": [
+   [
+    "PHE",
+    115
+   ],
+   [
+    "ARG",
+    60
+   ],
+   [
+    "LEU",
+    51
+   ],
+   [
+    "TYR",
+    44
+   ],
+   [
+    "SER",
+    37
+   ]
+  ],
+  "designed_nc_codes": [
+   [
+    "DIL",
+    43
+   ],
+   [
+    "4FB",
+    27
+   ],
+   [
+    "SAR",
+    26
+   ],
+   [
+    "MAA",
+    25
+   ],
+   [
+    "DTY",
+    13
+   ],
+   [
+    "XCP",
+    8
+   ],
+   [
+    "DHI",
+    8
+   ],
+   [
+    "DPR",
+    6
+   ]
+  ],
+  "bond_ok": 0.8431727994227994,
+  "clash": 0.23863636363636365,
+  "chir_D": 0.9142857142857143
+ }
+}

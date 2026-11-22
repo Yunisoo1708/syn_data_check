@@ -1,0 +1,76 @@
+{
+ "G3_bal_v10": {
+  "designs": 88,
+  "clash_designs": 18,
+  "atoms_bb": 8,
+  "atoms_sc": 11,
+  "atoms_nc": 6,
+  "atoms_can": 13,
+  "atoms_pos_nc_given": 6,
+  "atoms_pos_free": 13,
+  "designs_bb_only": 7,
+  "designs_sc_only": 10,
+  "designs_both": 1,
+  "ca_ca_min": {
+   "median": 4.336368114050711,
+   "p10": 4.020199145667348,
+   "min": 3.9373208571324474,
+   "frac_below": 0.0
+  },
+  "ca_any_min": {
+   "median": 3.355047593162226,
+   "p10": 3.0332789193309018,
+   "min": 2.5806118055388474,
+   "frac_below": 0.022727272727272728
+  },
+  "native_ca_ca_min": {
+   "median": 4.911352155974962,
+   "p10": 4.1943126969743085,
+   "min": 3.8420048151974164,
+   "frac_below": 0.0
+  },
+  "clash_dmin": {
+   "median": 2.285212850550732,
+   "p10": 1.8500906869760956,
+   "min": 1.4522609398195123,
+   "frac_below": 0.20454545454545456
+  }
+ },
+ "G4_clash_v10": {
+  "designs": 88,
+  "clash_designs": 17,
+  "atoms_bb": 10,
+  "atoms_sc": 12,
+  "atoms_nc": 4,
+  "atoms_can": 18,
+  "atoms_pos_nc_given": 4,
+  "atoms_pos_free": 18,
+  "designs_bb_only": 7,
+  "designs_sc_only": 8,
+  "designs_both": 2,
+  "ca_ca_min": {
+   "median": 4.262724683459477,
+   "p10": 4.0028758876156045,
+   "min": 3.627683187021158,
+   "frac_below": 0.0
+  },
+  "ca_any_min": {
+   "median": 3.389904768353899,
+   "p10": 3.018597917302436,
+   "min": 2.6914565156466645,
+   "frac_below": 0.022727272727272728
+  },
+  "native_ca_ca_min": {
+   "median": 4.911352155974962,
+   "p10": 4.1943126969743085,
+   "min": 3.8420048151974164,
+   "frac_below": 0.0
+  },
+  "clash_dmin": {
+   "median": 2.3445288665044606,
+   "p10": 1.8452042718791104,
+   "min": 0.9123530984287912,
+   "frac_below": 0.19318181818181818
+  }
+ }
+}

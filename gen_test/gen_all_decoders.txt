@@ -1,0 +1,15 @@
+G_ncw10_v5             nc_kept 1.000 free_rec 0.131 chir_D 0.352 chir_L 1.000 nc_atoms 0.987 bond_ok 0.226 clash 0.625 ca_rmsd_med 5.128 contacts_rel_med 1.319 n 88.000
+G2_pool_v5             nc_kept 1.000 free_rec 0.127 chir_D 0.387 chir_L 1.000 nc_atoms 0.987 bond_ok 0.218 clash 0.648 ca_rmsd_med 5.472 contacts_rel_med 1.436 n 88.000
+G3_bal_v5              nc_kept 1.000 free_rec 0.124 chir_D 0.419 chir_L 0.998 nc_atoms 0.987 bond_ok 0.223 clash 0.716 ca_rmsd_med 6.148 contacts_rel_med 1.352 n 88.000
+G_ncw10_v7             nc_kept 1.000 free_rec 0.149 chir_D 0.950 chir_L 1.000 nc_atoms 0.987 bond_ok 0.667 clash 0.341 ca_rmsd_med 4.775 contacts_rel_med 1.455 n 88.000
+G2_pool_v7             nc_kept 1.000 free_rec 0.144 chir_D 0.825 chir_L 1.000 nc_atoms 0.987 bond_ok 0.663 clash 0.193 ca_rmsd_med 5.204 contacts_rel_med 1.476 n 88.000
+G3_bal_v7              nc_kept 1.000 free_rec 0.116 chir_D 0.904 chir_L 1.000 nc_atoms 0.987 bond_ok 0.677 clash 0.227 ca_rmsd_med 5.348 contacts_rel_med 1.517 n 88.000
+G_ncw10_v7b            nc_kept 1.000 free_rec 0.149 chir_D 0.963 chir_L 1.000 nc_atoms 0.987 bond_ok 0.665 clash 0.330 ca_rmsd_med 4.775 contacts_rel_med 1.457 n 88.000
+G2_pool_v7b            nc_kept 1.000 free_rec 0.144 chir_D 0.935 chir_L 1.000 nc_atoms 0.987 bond_ok 0.736 clash 0.170 ca_rmsd_med 5.204 contacts_rel_med 1.468 n 88.000
+G3_bal_v7b             nc_kept 1.000 free_rec 0.116 chir_D 0.958 chir_L 1.000 nc_atoms 0.987 bond_ok 0.710 clash 0.227 ca_rmsd_med 5.348 contacts_rel_med 1.484 n 88.000
+G_ncw10_v8             nc_kept 1.000 free_rec 0.149 chir_D 0.979 chir_L 1.000 nc_atoms 0.987 bond_ok 0.261 clash 0.375 ca_rmsd_med 4.775 contacts_rel_med 1.507 n 88.000
+G2_pool_v8             nc_kept 1.000 free_rec 0.144 chir_D 0.988 chir_L 1.000 nc_atoms 0.987 bond_ok 0.222 clash 0.216 ca_rmsd_med 5.204 contacts_rel_med 1.573 n 88.000
+G3_bal_v8              nc_kept 1.000 free_rec 0.116 chir_D 0.991 chir_L 1.000 nc_atoms 0.987 bond_ok 0.209 clash 0.330 ca_rmsd_med 5.348 contacts_rel_med 1.567 n 88.000
+G_ncw10_v9             nc_kept 1.000 free_rec 0.149 chir_D 0.984 chir_L 1.000 nc_atoms 0.987 bond_ok 0.511 clash 0.352 ca_rmsd_med 4.775 contacts_rel_med 1.482 n 88.000
+G2_pool_v9             nc_kept 1.000 free_rec 0.144 chir_D 0.970 chir_L 1.000 nc_atoms 0.987 bond_ok 0.501 clash 0.193 ca_rmsd_med 5.204 contacts_rel_med 1.530 n 88.000
+G3_bal_v9              nc_kept 1.000 free_rec 0.116 chir_D 0.991 chir_L 1.000 nc_atoms 0.987 bond_ok 0.544 clash 0.261 ca_rmsd_med 5.348 contacts_rel_med 1.526 n 88.000

@@ -1,0 +1,38 @@
+# secrets / local
+.env
+.vscode/
+.project-root
+__pycache__/
+*.pyc
+# large or regenerable folders (data, weights, models, splits, trial outputs)
+/data/
+/models/
+/weights/
+/splits/
+/archive/
+/denoiser_trial/
+# bulky outputs inside code folders
+/af3_filter/jobs*/
+/af3_filter/out*/
+/gen_test/inputs/
+/gen_test/out*/
+/gen_test/**/inference_samples/
+/rosetta_score/**/*.pdb
+# binary / structure / array formats
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.npz
+*.npy
+*.pkl
+*.pickle
+*.tar
+*.tar.gz
+*.zip
+*.cif
+*.mmcif
+*.pdb
+*.sdf
+*.mol2
+*.log

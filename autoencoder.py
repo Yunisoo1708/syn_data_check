@@ -57,8 +57,8 @@ def parse_structure(file):
     chains = list(structure.get_chains())
     residues = []
     for chain in chains:
-        residue = chain.get_residues()
-        residues.append(residue.get_residues()) #PROBLEM: overwritten on every loop, so only the LAST chain is kept. Set residues = [] before the loop and use += here.
+        residue = chain.get_residues() #get_residues() returns all residues of a chain. 
+        residues += residue
     return (chain, residues)
 
 def bond_length_check(file):
@@ -67,16 +67,22 @@ def bond_length_check(file):
     for res in residues: 
         atoms = list(res.get_atoms())
         side_chain_atoms = [a for a in atoms if a.get_id() not in Backbone_atoms]
-        backbone_atoms = [a for a in atoms if a.get_id() in Backbone_atoms] #PROBLEM: a.get_id needs () -> a.get_id(). Without it you compare the method itself, so the list is always empty.
-        ns_bb = NeighborSearch(backbone_atoms) #PROBLEM: an empty list crashes NeighborSearch (e.g. a residue with no atoms in the group, Gly has no side chain). Check len(...) > 1 first.
-        bonded_pairs_backbone = ns_bb.search_all(radius=2.1, level='A') #PROBLEM: radius=np.inf returns EVERY pair, not only bonded ones. Use about 2.1 (Angstrom) = bond cutoff.
-        ns_sd = NeighborSearch(side_chain_atoms) #PROBLEM: same empty-list crash, this list is empty for every Gly.
-        bonded_side_chain_pairs = ns_sd.search_all(radius=2.1, level='A') #PROBLEM: level='B' is not a valid level (use 'A' = atoms), and radius=np.inf again (use about 2.1).
+        backbone_atoms = [a for a in atoms if a.get_id() in Backbone_atoms] 
+        assert len(backbone_atoms) != 0, f'No backbone atom found for {res.get_id()}'
+        ns_bb = NeighborSearch(backbone_atoms) 
+        bonded_pairs_backbone = ns_bb.search_all(radius=2.1, level='A') 
         for a_1, a_2 in bonded_pairs_backbone: 
-            distances[(f'{a_1.get_id()}_{res.index}', f'{a_2.get_id()}_{res.index}')] =  (abs(a_1 - a_2) < TOL_STRICT) #PROBLEM 1: Residue has no .index -> res.id[1] is the residue number (add the chain id too, else chains overwrite each other). PROBLEM 2: this tests if the LENGTH is below 0.05, never true. It should be abs(length - ideal) < TOL with ideal = BACKBONE_BONDS[frozenset((name1, name2))]; use .get() and skip pairs that are not in the table.
+            ideal_bond_length = BACKBONE_BONDS.get(frozenset((f'{a_1.get_id()}', f'{a_2.get_id()}')))
+            distances[(f'{a_1.get_id()}_{res.id[1]}', f'{a_2.get_id()}_{res.id[1]}')] =  bool(abs(np.sqrt(np.sum((a_1.get_coord() - a_2.get_coord())**2)) - ideal_bond_length) < TOL_STRICT) 
 
-        for a_1, a_2 in bonded_side_chain_pairs: 
-            distances[f'{a_1.get_id()}_{res.index}', f'{a_2.get_id()}_{res.index}'] = (abs(a_1 - a_2) < TOL_STRICT) #PROBLEM: same two problems as above. Here the ideal comes from SIDECHAIN_BONDS[frozenset((a_1.element, a_2.element))] (keyed by ELEMENT, not name), and 0.05 is too strict for this rough table (aromatic/double bonds are 0.1-0.2 shorter), use about 0.2.
+        if len(side_chain_atoms) != 0:
+            ns_sd = NeighborSearch(side_chain_atoms)   
+            bonded_side_chain_pairs = ns_sd.search_all(radius=2.1, level='A') 
+            for a_1, a_2 in bonded_side_chain_pairs: 
+                ideal_bond_length = SIDECHAIN_BONDS.get(frozenset((f'{a_1.element}', f'{a_2.element}')))
+                distances[f'{a_1.get_id()}_{res.id[1]}', f'{a_2.get_id()}_{res.id[1]}'] = bool(abs(np.sqrt(np.sum((a_1.get_coord() - a_2.get_coord())**2)) - ideal_bond_length) < TOL_STRICT) 
+        else:
+            pass 
 
     return distances #NOTE: only bonds INSIDE one residue are found, so the peptide bond C(i)-N(i+1) (PEPTIDE_BOND) is never checked. 
 
@@ -100,4 +106,7 @@ def angle_check(file):
                 angle[minor] = (abs(angle - standard_angle) < TOL_SIGMA* deviation) #PROBLEM: `angle` is a number here (see the dict on top), so item assignment fails. Also the key `minor` is a tuple of Atom objects, hard to read; use the names + residue number. #Toll_sigma = Idea of how spread do you want the thing to be.
 
     return angle #PROBLEM: returns the last NUMBER, not the dict of results (rename as above).
+
+print(bond_length_check('data/test_cif/rf3_L07-C0310.cif'))
+
 

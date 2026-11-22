@@ -1,0 +1,130 @@
+7PIU_P:
+  input: /mnt/c/Research/RFD4_fine_tune/gen_test/inputs/7PIU_P.cif
+  contig: R40-56,R89,R91-107,R117-137,R177-201,R257-273,R277-293,R295,/0,P1-8
+  conditions:
+    C_CRD:
+      'true':
+      - select: chain_id == 'R'
+    C_SEQ:
+      'true':
+      - select: chain_id == 'R' or (chain_id == 'P' and res_id == 3) or (chain_id == 'P' and res_id == 5)
+7XAU_F:
+  input: /mnt/c/Research/RFD4_fine_tune/gen_test/inputs/7XAU_F.cif
+  contig: A42-43,A46-47,A50,A53,A88,A91-109,A111,A115-131,A169-198,A204-218,A220,A268-305,/0,P1-7
+  conditions:
+    C_CRD:
+      'true':
+      - select: chain_id == 'A'
+    C_SEQ:
+      'true':
+      - select: chain_id == 'A' or (chain_id == 'P' and res_id == 1) or (chain_id == 'P' and res_id == 4)
+8I95_D:
+  input: /mnt/c/Research/RFD4_fine_tune/gen_test/inputs/8I95_D.cif
+  contig: C22-23,C26-27,C30,C67,C70-108,C110,C150,C153-174,C331-341,C344-345,C387-407,C410-426,C428,/0,P1-9
+  conditions:
+    C_CRD:
+      'true':
+      - select: chain_id == 'C'
+    C_SEQ:
+      'true':
+      - select: chain_id == 'C' or (chain_id == 'P' and res_id == 8)
+8X8N_C:
+  input: /mnt/c/Research/RFD4_fine_tune/gen_test/inputs/8X8N_C.cif
+  contig: R43-44,R46-47,R50,R86,R88-106,R112-113,R115-128,R166-168,R170-211,R260-297,/0,P1-8
+  conditions:
+    C_CRD:
+      'true':
+      - select: chain_id == 'R'
+    C_SEQ:
+      'true':
+      - select: chain_id == 'R' or (chain_id == 'P' and res_id == 1) or (chain_id == 'P' and res_id == 4)
+9B4J_A:
+  input: /mnt/c/Research/RFD4_fine_tune/gen_test/inputs/9B4J_A.cif
+  contig: ',/0,P1-7'
+  conditions:
+    C_CRD:
+      'true':
+      - select: ''
+    C_SEQ:
+      'true':
+      - select: (chain_id == 'P' and res_id == 1) or (chain_id == 'P' and res_id == 2) or (chain_id == 'P' and res_id == 3) or (chain_id == 'P' and res_id == 4) or (chain_id == 'P' and res_id == 5) or (chain_id == 'P' and res_id == 6) or (chain_id == 'P' and res_id == 7)
+9B4K_A:
+  input: /mnt/c/Research/RFD4_fine_tune/gen_test/inputs/9B4K_A.cif
+  contig: ',/0,P1-7'
+  conditions:
+    C_CRD:
+      'true':
+      - select: ''
+    C_SEQ:
+      'true':
+      - select: (chain_id == 'P' and res_id == 1) or (chain_id == 'P' and res_id == 2) or (chain_id == 'P' and res_id == 3) or (chain_id == 'P' and res_id == 4) or (chain_id == 'P' and res_id == 5) or (chain_id == 'P' and res_id == 6) or (chain_id == 'P' and res_id == 7)
+9B4L_E:
+  input: /mnt/c/Research/RFD4_fine_tune/gen_test/inputs/9B4L_E.cif
+  contig: A310-319,A321,/0,B311-319,B321,/0,P1-7
+  conditions:
+    C_CRD:
+      'true':
+      - select: chain_id == 'A' or chain_id == 'B'
+    C_SEQ:
+      'true':
+      - select: chain_id == 'A' or chain_id == 'B' or (chain_id == 'P' and res_id == 1) or (chain_id == 'P' and res_id == 2) or (chain_id == 'P' and res_id == 3) or (chain_id == 'P' and res_id == 4) or (chain_id == 'P' and res_id == 5) or (chain_id == 'P' and res_id == 6) or (chain_id == 'P' and res_id == 7)
+9KUG_D:
+  input: /mnt/c/Research/RFD4_fine_tune/gen_test/inputs/9KUG_D.cif
+  contig: A35,A37,A40-41,A44,A47,A84-121,A124,A164,A167-204,A206-207,A211,A254-291,A293,/0,P1-10
+  conditions:
+    C_CRD:
+      'true':
+      - select: chain_id == 'A'
+    C_SEQ:
+      'true':
+      - select: chain_id == 'A' or (chain_id == 'P' and res_id == 8) or (chain_id == 'P' and res_id == 9)
+9KXS_D:
+  input: /mnt/c/Research/RFD4_fine_tune/gen_test/inputs/9KXS_D.cif
+  contig: A36-37,A40,A44,A84-105,A107-121,A124,A164,A167-189,A198-208,A211,A255-273,A275-291,A294,/0,P1-9
+  conditions:
+    C_CRD:
+      'true':
+      - select: chain_id == 'A'
+    C_SEQ:
+      'true':
+      - select: chain_id == 'A' or (chain_id == 'P' and res_id == 7) or (chain_id == 'P' and res_id == 8)
+9Q0F_B:
+  input: /mnt/c/Research/RFD4_fine_tune/gen_test/inputs/9Q0F_B.cif
+  contig: A12-24,A26-28,A31-32,A34-36,A38,A77-96,A100-113,A156,A159-188,A191-200,A203,A253,A255-293,A295,/0,P1-8
+  conditions:
+    C_CRD:
+      'true':
+      - select: chain_id == 'A'
+    C_SEQ:
+      'true':
+      - select: chain_id == 'A' or (chain_id == 'P' and res_id == 1)
+9UMJ_D:
+  input: /mnt/c/Research/RFD4_fine_tune/gen_test/inputs/9UMJ_D.cif
+  contig: C20,C22-23,C26-27,C30,C67,C70-110,C150,C153-167,C171-177,C322-335,C337-338,C382-421,/0,P1-8
+  conditions:
+    C_CRD:
+      'true':
+      - select: chain_id == 'C'
+    C_SEQ:
+      'true':
+      - select: chain_id == 'C' or (chain_id == 'P' and res_id == 7)
+9UMX_D:
+  input: /mnt/c/Research/RFD4_fine_tune/gen_test/inputs/9UMX_D.cif
+  contig: A37,A40,A44,A47,A84-121,A124,A164,A167-181,A183-200,A202-204,A206-207,A210-211,A254-291,A293,/0,P1-10
+  conditions:
+    C_CRD:
+      'true':
+      - select: chain_id == 'A'
+    C_SEQ:
+      'true':
+      - select: chain_id == 'A' or (chain_id == 'P' and res_id == 9)
+9V38_C:
+  input: /mnt/c/Research/RFD4_fine_tune/gen_test/inputs/9V38_C.cif
+  contig: R38-39,R42,R82-119,R165-166,R168-178,R183-198,R200-202,R204-205,R245-282,/0,P1-6
+  conditions:
+    C_CRD:
+      'true':
+      - select: chain_id == 'R'
+    C_SEQ:
+      'true':
+      - select: chain_id == 'R' or (chain_id == 'P' and res_id == 5)
